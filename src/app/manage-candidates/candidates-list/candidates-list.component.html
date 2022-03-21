@@ -1,0 +1,100 @@
+<div class="container">
+    <div class="flex1">
+        <div style="margin: 0 20px">
+            <h4>Candidate List </h4>
+            <p>{{routePath}}</p>
+        </div>
+        <button class="btnAddCandidate" type="button" (click)="onAddCandidate()">Add New</button>
+    </div>
+    <div class="flex2" *ngIf="!addCandidate">
+            <!-- <div class="card" *ngFor="let candidate of candidates">
+                <h4>{{candidate.firstName}}</h4>
+                <p>{{ candidate.lastName}}</p>
+                <p>{{ candidate.email}}</p>
+                <p>{{ candidate.phone}}</p>
+                <p>{{ candidate.dayOfBirth}}</p>
+            </div> -->
+            <div class="card" *ngFor="let candidate of candidates">
+              <div class="header-card">
+                <h4>{{candidate.firstName}}</h4>
+                <p>{{candidate.city}}</p>
+              </div>
+              <div class="info">
+                <div class="about">
+                  <p class="fade">Gender</p>
+                  <p>{{candidate.gender}}</p>
+                </div>
+                <div class="about">
+                  <p class="fade">Date od birth</p>
+                  <p>{{candidate.dayOfBirth}}</p>
+                </div>
+                <div class="about">
+                  <p class="fade">Location</p>
+                  <p>{{candidate.state}}</p>
+                </div>
+              </div>
+              <div class="info">
+                <div class="about">
+                  <p class="fade">Phone number</p>
+                  <p>{{candidate.phone}}</p>
+                </div>
+                <div class="about">
+                  <p class="fade">Email ID</p>
+                  <p>{{candidate.email}}</p>
+                </div>
+              </div>
+              <div class="status">
+                <p class="fade">Current status</p>
+                <h5>
+                  <fa-icon [icon]="faCheckCircle"></fa-icon> Degree completed
+                </h5>
+                <p class="fade">Completed</p>
+              </div>
+            </div>
+        
+    </div>
+    <!-- OVDE IDE FORMA ZA ADD CANDIDATA -->
+    <form (ngSubmit)="onSubmit(addForm)" *ngIf="addCandidate" class="addCandidate" #addForm="ngForm">
+        <h3 style="cursor: pointer; color: rgba(255, 166, 0, 0.7);">Add New Candidate</h3>
+        <div class="form-control">
+          <h4>General Information</h4>
+          <div class="part">
+            <div style="width: 50%;">
+              <input type="text" name="firstName" id="first" placeholder="First name" ngModel required>
+              <input type="text" name="middleName" id="middle" placeholder="Middle name" ngModel>
+            </div>
+            <div style="width: 50%;">
+              <input type="text" name="lastName" id="last" placeholder="Last name" ngModel required>
+            </div>
+          </div>
+        </div>
+        <div class="form-control">
+          <h4>Other Information</h4>
+          <div class="part">
+            <div style="width: 50%;">
+              <div class="part">
+                <input style="width: 45%; margin: 0 5px;" type="date" name="dateOfBirth" id="dateOfBirth"
+                  placeholder="Date Of birth" required ngModel>
+                <select style="width: 45%; margin: 0 5px;" name="gender" id="gender" ngModel>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>
+              <input type="text" name="city" id="city" placeholder="City" ngModel required>
+              <input type="text" name="state" id="state" placeholder="State" ngModel required>
+              <input type="number" name="phoneNum" id="phone" placeholder="Phone number" ngModel required>
+            </div>
+            <div style="width: 50%;">
+              <input type="text" name="adress" id="adress" placeholder="Adress(Number and street)" ngModel required>
+              <input type="number" name="zipcode" id="zipcode" placeholder="Zip Code" ngModel required>
+              <input type="text" name="ssn" id="ssn" placeholder="SSN" ngModel>
+              <input type="email" name="email" id="email" placeholder="Email" ngModel required>
+            </div>
+          </div>
+        </div>
+        <div class="btnsAdd">
+          <button type="button" style="background-color: white; color: red; border: 1px solid red;" >Cancel</button>
+          <button [disabled]="!addForm.valid" type="submit" class="add" style="background-color: orange; color: white;">Add</button>
+        </div>
+      </form>
+</div>

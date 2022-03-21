@@ -1,0 +1,49 @@
+<header class="fixed-container">
+  <div class="wrapper">
+    <div class="logo">
+      <img src="../../assets/img/logo.jpg" width="180px" alt="logo">
+      <button (click)="onToggle(sideNav)">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </button>
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li>
+          <a>
+            <fa-icon [icon]="faBorderNone"></fa-icon>
+          </a>
+        </li>
+        <li>
+          <a>
+            <fa-icon [icon]="faShoppingCart"></fa-icon>
+          </a>
+        </li>
+        <li>
+          <a>
+            <fa-icon [icon]="faBell"></fa-icon>
+          </a>
+        </li>
+        <li><a><img style="border-radius: 50%;" width="50px" src="../../../assets/img/Andrija.jpg" alt="SomeGuy"></a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<nav #sideNav class="side-nav">
+    <div class="flex-column">
+        <button type="button">
+            <fa-icon [icon]="faListAlt"></fa-icon> Manage Candidate
+        </button>
+        <button type="button">
+            <fa-icon [icon]="faFileAlt"></fa-icon> Manage Forms
+        </button>
+        <button type="button">
+            <fa-icon [icon]="faFileExport"></fa-icon> Review
+        </button>
+    </div>
+</nav>
+<div style="position: absolute; top: 100px; left: 250px;">
+  <router-outlet></router-outlet>
+</div>

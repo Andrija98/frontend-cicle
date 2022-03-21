@@ -1,0 +1,123 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 82vw;
+    /* border: 1px solid black; */
+}
+.container .flex1{
+    display: flex;
+    justify-content: space-between;
+}
+.container .flex1 h4{
+    font-size: 24px;
+}
+.container .flex1 p{
+    font-size: 16px;
+    color: rgb(114, 114, 114);
+
+}
+.container .flex2{
+    display: flex;
+    padding: 20px;
+    margin: 20px;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+}
+.container .flex2 .card{
+    width: 300px; 
+    height: 320px; 
+    margin: 20px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid grey;
+    border-radius: 5px;
+    
+    overflow: hidden;
+}
+.header-card{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(128, 128, 128, 0.3);
+    
+}
+.header-card h4{
+    margin: 10px 10px 0 10px;
+    font-size: 22px;
+}
+.header-card p{
+    margin: 0 0 10px 10px;
+    color: rgba(0, 0, 0, 0.7);
+}
+.info{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    margin: 0 0 10px 10px;
+}
+.fade{
+    color: rgba(128, 128, 128, 0.7);
+}
+.status{
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+
+}
+.status h5{
+    font-size: 18px;
+    color: green;
+    margin: 0px;
+}
+.about{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+.btnAddCandidate{
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 5px;
+
+    padding: 5px 20px;
+}
+.addCandidate{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 550px;
+    background-color: white;
+    overflow: hidden;
+    min-height: 300px;
+    padding: 40px ;
+}
+.part{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.part input{
+    width: 90%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border: solid gray 1px;
+    border-radius: 5px;
+}
+.btnsAdd{
+    width: 100%; 
+    display: flex; 
+    flex-direction:row-reverse; 
+}
+.btnsAdd button{
+    padding: 10px 30px;
+    margin-right: 20px;
+    border-radius: 5px;
+    border: none;
+}
+.btnsAdd button:disabled{
+    cursor: not-allowed;
+}

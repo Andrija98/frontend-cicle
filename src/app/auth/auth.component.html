@@ -1,0 +1,77 @@
+<div class="container">
+    <form (ngSubmit)="onSubmit(form)" class="login" #form="ngForm" *ngIf="isLogin">
+        <img src="../../assets/img/logo.jpg" alt="Logo" width="150px">
+        <p>Don't have an account? <a (click)="onSwitch()" style="color: rgba(255, 166, 0, 0.7); cursor: pointer;"> Sign Up</a></p>
+        <input 
+            type="email" 
+            name="email" 
+            id="email" 
+            placeholder="Enter your email"
+            ngModel
+            required
+            email>
+        <input 
+            type="password" 
+            name="password" 
+            id="pass" 
+            placeholder="Enter your password"
+            ngModel
+            required>
+        <button type="submit" [disabled]="!form.valid">Login</button>
+        <a type="button" style="cursor: pointer;" class="forgot" >Forgot password</a>
+    </form>
+    <form (ngSubmit)="onSubmit(form)" *ngIf="!isLogin" class="signUp" #form="ngForm"> 
+        <h3 style="cursor: pointer; color: rgba(255, 166, 0, 0.7);">Create our account</h3>
+        <div class="form-control">
+            <h4>General Information</h4>
+            <div class="part">
+                <div style="width: 50%;">
+                    <input type="text" name="firtName" id="first" placeholder="First name" ngModel>
+                    <input type="text" name="middleName" id="middle" placeholder="Middle name" ngModel>
+                </div>
+                <div style="width: 50%;">
+                    <input type="text" name="lastName" id="last" placeholder="Last name" ngModel>
+                </div>
+            </div>
+        </div>
+        <div class="form-control">
+            <h4>Other Information</h4>
+            <div class="part">
+                <div style="width: 50%;">
+                    <div class="part">
+                        <input style="width: 45%; margin: 0 5px;" type="date" name="dateOfBirth" id="dateOfBirth" placeholder="Date Of birth" ngModel>
+                        <select style="width: 45%; margin: 0 5px;" name="gender" id="gender" ngModel>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <input type="text" name="city" id="city" placeholder="City" ngModel>
+                    <input type="text" name="state" id="state" placeholder="State" ngModel>
+                    <input type="number" name="phoneNum" id="phone" placeholder="Phone number" ngModel>
+                </div>
+                <div style="width: 50%;">
+                    <input type="text" name="adress" id="adress" placeholder="Adress(Number and street)" ngModel>
+                    <input type="number" name="zipcode" id="zipcode" placeholder="Zip Code" ngModel>
+                    <input type="text" name="ssn" id="ssn" placeholder="SSN" ngModel>
+                    <input type="email" name="email" id="email" placeholder="Email" ngModel>
+                </div>
+            </div>
+        </div>
+        <div class="form-control" style="width: 100%;">
+            <h4>Account setup</h4>
+            <div class="part">
+                <div style="width: 50%;">
+                    <input type="password" name="password" id="password" placeholder="Enter Password" ngModel>
+                </div>
+                <div style="width: 50%;">
+                    <input type="password" name="passwordConfirm" id="passwordConfirm" placeholder="Confirm Password" ngModel>
+                </div>
+            </div>
+        </div>
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+            <p style="font-size: 14px;">By clicking Sign up you aggre to our <span style="color: rgba(255, 166, 0, 0.7)">Terms,Data Policy</span> and <span style="color: rgba(255, 166, 0, 0.7)">Coocie Policy</span></p>
+            <button type="submit" style="width: 70%;">Sign Up</button>
+            <p>Already have an Account? <a style="cursor: pointer; color: rgba(255, 166, 0, 0.7);" (click)="onSwitch()">Sign in</a></p>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,62 @@
+<div>
+
+  <div class="container">
+    <div class="flex-row">
+      <h3>Manage Forms</h3>
+
+      <button class="btn-add">Add New</button>
+    </div>
+    <p><em>Home/Manage Forms </em></p>
+    <table>
+      <thead>
+        <tr>
+          <th [ngStyle]="{'width': '40%'}"><input type="checkbox" /> Candidate Name</th>
+          <th [ngStyle]="{'width': '20%'}">State Name</th>
+          <th [ngStyle]="{'width': '20%'}">Created Date</th>
+          <th [ngStyle]="{'width': '10%'}">Enable/Disable</th>
+          <th [ngStyle]="{'width': '10%', 'text-align': 'center'}">Action</th>
+        </tr>
+      </thead>
+      <tbody [ngStyle]="{'height': '20%', 'overflow': 'auto'}">
+        <tr *ngFor="let candidate of candidates">
+          <td><input type="checkbox" /> {{candidate.firstName}}</td>
+          <td> {{ candidate.state }}</td>
+          <td> {{ candidate.dayOfBirth }}</td>
+          <td [ngStyle]="{'text-align': 'center'}">
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label>
+          </td>
+          <td [ngStyle]="{'text-align': 'center', 'cursor': 'pointer'}">
+            <fa-icon [icon]="faPen"></fa-icon>
+            <fa-icon [ngStyle]="{'color': 'red'}" [icon]="faTrashAlt"></fa-icon>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>1-12 of 20 States</td>
+          <td>Items/page <select id="states">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </td>
+          <td>The Page You're on
+            <select id="states">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </td>
+          <td [ngStyle]="{'text-align': 'center'}" colspan="2">
+            <pre><fa-icon [ngStyle]="{'cursor': 'pointer'}" [icon]="faChevronLeft"></fa-icon>      <fa-icon [ngStyle]="{'cursor': 'pointer'}" [icon]="faChevronRight"></fa-icon> </pre>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>

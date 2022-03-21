@@ -53,7 +53,6 @@
             </div>
         
     </div>
-    <!-- OVDE IDE FORMA ZA ADD CANDIDATA -->
     <form (ngSubmit)="onSubmit(addForm)" *ngIf="addCandidate" class="addCandidate" #addForm="ngForm">
         <h3 style="cursor: pointer; color: rgba(255, 166, 0, 0.7);">Add New Candidate</h3>
         <div class="form-control">
@@ -93,7 +92,7 @@
           </div>
         </div>
         <div class="btnsAdd">
-          <button type="button" style="background-color: white; color: red; border: 1px solid red;" >Cancel</button>
+          <button type="button" style="background-color: white; color: red; border: 1px solid red;" (click)="onCancel(addForm)">Cancel</button>
           <button [disabled]="!addForm.valid" type="submit" class="add" style="background-color: orange; color: white;">Add</button>
         </div>
       </form>

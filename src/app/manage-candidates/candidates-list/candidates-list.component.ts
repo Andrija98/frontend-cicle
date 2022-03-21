@@ -28,7 +28,10 @@ export class CandidatesListComponent implements OnInit, OnDestroy {
      }
     );
   }
-
+  onCancel(form: NgForm){
+    form.reset();
+    this.addCandidate = false;
+  }
   onSubmit(form: NgForm){
     console.log(form);
     const candidate: Candidate = new Candidate(form.value.firstName, form.value.lastName, form.value.city, form.value.state, form.value.dateOfBirth, form.value.phoneNum, form.value.email, form.value.gender);

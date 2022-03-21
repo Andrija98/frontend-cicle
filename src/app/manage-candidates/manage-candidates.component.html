@@ -33,13 +33,13 @@
 </header>
 <nav #sideNav class="side-nav">
     <div class="flex-column">
-        <button type="button">
+        <button type="button" routerLink="/manage/candidate-list">
             <fa-icon [icon]="faListAlt"></fa-icon> Manage Candidate
         </button>
-        <button type="button">
+        <button type="button" routerLink="/manage/manage-forms">
             <fa-icon [icon]="faFileAlt"></fa-icon> Manage Forms
         </button>
-        <button type="button">
+        <button type="button" routerLink="/manage/reviw-forms">
             <fa-icon [icon]="faFileExport"></fa-icon> Review
         </button>
     </div>

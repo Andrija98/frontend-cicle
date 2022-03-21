@@ -9,13 +9,17 @@ import { AuthComponent } from './auth/auth.component';
 import { ManageCandidatesComponent } from './manage-candidates/manage-candidates.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CandidatesListComponent } from './manage-candidates/candidates-list/candidates-list.component';
+import { ManageFormsComponent } from './manage-forms/manage-forms.component';
+import { ReviewFormsComponent } from './review-forms/review-forms.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
     ManageCandidatesComponent,
-    CandidatesListComponent
+    CandidatesListComponent,
+    ManageFormsComponent,
+    ReviewFormsComponent
   ],
   imports: [
     BrowserModule,

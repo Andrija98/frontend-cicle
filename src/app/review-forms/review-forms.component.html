@@ -1,0 +1,80 @@
+<div>
+    <div class="container">
+
+        <h3>Manage Forms</h3>    
+        <p><em>Home/Manage Forms </em></p>
+        <div class="flex-row">
+            <div class="btns">
+                <button>All</button>
+                <button>Pending</button>
+                <button>Approved</button>
+                <button>Rejected</button>
+            </div>
+            <div class="sidesearch">
+                <input type="text"  name="search">
+                <button><fa-icon [ngStyle]="{'cursor': 'pointer'}" [icon]="faSearch"></fa-icon></button>
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th [ngStyle]="{'width': '25%'}" ><input type="checkbox" /> Candidate Name</th>
+                    <th [ngStyle]="{'width': '20%'}">Training Institute name</th>
+                    <th [ngStyle]="{'width': '20%'}">State Name</th>
+                    <th [ngStyle]="{'width': '10%'}">Eligibility Route</th>
+                    <th [ngStyle]="{'width': '25%', 'text-align': 'center'}">Action</th>
+                </tr>
+            </thead>
+            <tbody [ngStyle]="{'height': '20%', 'overflow': 'auto'}">
+                <tr *ngFor="let candidate of candidates">
+                    <td><input type="checkbox" /> {{candidate.firstName}}</td>
+                    <td> {{ candidate.state }}</td>
+                    <td> {{ candidate.dayOfBirth }}</td>
+                    <td  [ngStyle]="{'text-align': 'center'}">
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </td>
+                    <td  [ngStyle]="{'text-align': 'center', 'cursor': 'pointer'}">
+                        <button id="btn-approved">Approved</button>
+                        <button id="btn-reject">Rejected</button>
+                        <fa-icon [ngStyle]="{'padding': '0 10px'}" [icon]="faEye"></fa-icon>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>1-12 of 20 States</td>
+                    <td>Items/page  <select id="states">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                    </td>
+                    <td>The Page You're on 
+                        <select id="states">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </td>
+                    <td [ngStyle]="{'text-align': 'center'}" colspan="2">
+                        <pre><fa-icon [ngStyle]="{'cursor': 'pointer'}" [icon]="faChevronLeft"></fa-icon>      <fa-icon [ngStyle]="{'cursor': 'pointer'}" [icon]="faChevronRight"></fa-icon> </pre>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+</div>
+</div>
+
+
+
+
+
+
+
+
+

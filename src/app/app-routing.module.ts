@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { AuthComponent } from "./auth/auth.component";
-import { AuthGuard } from "./auth/auth.guard";
+import { AuthGuard } from "./auth/auth.guard.service";
 import { CandidatesListComponent } from "./manage-candidates/candidates-list/candidates-list.component";
 import { ManageCandidatesComponent } from "./manage-candidates/manage-candidates.component";
 import { ManageFormsComponent } from "./manage-forms/manage-forms.component";
